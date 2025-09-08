@@ -1,22 +1,334 @@
-# 👋 Hi, We are hdobox
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>hdobox — Stream Movies & Shows Online</title>
+  <meta name="description" content="hdobox — Stream the latest movies and web series. Fast, mobile-friendly and updated regularly. Visit hdobox.sbs for more." />
+  <meta name="keywords" content="hdobox, hdobox.sbs, stream movies, watch shows online, latest movies" />
+  <meta name="author" content="hdobox" />
 
-Welcome to the official GitHub profile of **hdobox** 🎬  
+  <!-- Open Graph -->
+  <meta property="og:title" content="hdobox — Stream Movies & Shows Online" />
+  <meta property="og:description" content="hdobox is your hub for the latest movies and TV shows. Fast and mobile-friendly streaming experience. Visit hdobox.sbs" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hdobox.sbs/" />
+  <meta property="og:image" content="https://hdobox.sbs/og-image.png" />
 
-👉 Visit our website: [https://hdobox.sbs](https://hdobox.sbs)
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#ff4d4f;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxw:1100px;
+      --brand: #1fd1a4;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(31,209,164,0.06), transparent 8%),
+        linear-gradient(180deg, #071023 0%, #071326 60%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .container{
+      width:90%;
+      max-width:var(--maxw);
+      margin:28px auto;
+    }
 
----
+    /* header */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:22px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo{
+      width:48px;
+      height:48px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--brand), #0ea5b7);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      box-shadow:0 6px 18px rgba(16,24,40,0.6);
+    }
+    .brand h1{
+      margin:0;
+      font-size:18px;
+      letter-spacing:0.2px;
+    }
+    .brand p{margin:0;font-size:13px;color:var(--muted)}
 
-## 🌟 About hdobox
-- Stream and explore the **latest movies & TV shows**  
-- Designed to be **fast, clean, and mobile-friendly**  
-- Updated regularly with **new & trending content**  
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-size:14px;
+      padding:8px 12px;
+      border-radius:10px;
+    }
+    nav a:hover{color:#fff;background:var(--glass)}
 
----
+    /* hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:28px;
+      align-items:center;
+      margin-bottom:28px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:0 8px 30px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .hero .left h2{
+      margin:0 0 12px 0;
+      font-size:28px;
+      line-height:1.06;
+    }
+    .hero p.lead{margin:0 0 18px 0;color:var(--muted);font-size:15px}
 
-## 🔗 Connect With Us
-- 🌍 Website: [https://hdobox.sbs](https://hdobox.sbs)  
-- 📢 Stay tuned for more updates here on GitHub!  
+    .cta{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-top:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:12px;
+      border:none;
+      cursor:pointer;
+      text-decoration:none;
+      font-weight:600;
+    }
+    .btn-primary{
+      background:linear-gradient(90deg,var(--brand),#0ea5b7);
+      color:#02121a;
+      box-shadow:0 8px 20px rgba(31,209,164,0.12);
+    }
+    .btn-ghost{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.04);
+    }
 
----
+    /* features */
+    .features{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .feature{
+      padding:14px;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .feature h4{margin:0 0 8px 0;font-size:15px}
+    .feature p{margin:0;color:var(--muted);font-size:13px}
 
-✨ *This is the official profile for hdobox – entertainment made simple.*
+    /* right preview */
+    .preview{
+      padding:0;
+      overflow:hidden;
+      border-radius:12px;
+      background:linear-gradient(180deg,#071026, #061223);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .preview .img{
+      height:220px;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+        url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0') center/cover no-repeat;
+      display:flex;
+      align-items:flex-end;
+      padding:18px;
+      color:#fff;
+    }
+    .preview .img h3{margin:0;font-size:16px}
+    .preview .meta{padding:14px;color:var(--muted);font-size:13px}
+
+    /* content sections */
+    main .section{
+      margin:22px 0;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 320px;
+      gap:18px;
+    }
+    .faq .q{margin-bottom:12px}
+    .footer{
+      margin-top:26px;
+      padding:18px;
+      border-radius:12px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; padding-bottom:6px}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .grid-2{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      .features{grid-template-columns:1fr}
+      .logo{width:44px;height:44px;font-size:14px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="https://hdobox.sbs/" target="_blank" rel="noopener noreferrer">
+        <div class="logo">HD</div>
+        <div>
+          <h1>hdobox</h1>
+          <p>Movies & Shows — hdobox.sbs</p>
+        </div>
+      </a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#how">How it Works</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-ghost" href="https://hdobox.sbs/" target="_blank">Visit Site</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card left">
+        <h2>hdobox — Stream movies & web series, fast and free</h2>
+        <p class="lead">Discover latest movies, trending shows and curated collections. hdobox is built to be lightweight, mobile friendly and easy to use — start exploring now.</p>
+
+        <div class="cta">
+          <a class="btn btn-primary" href="https://hdobox.sbs/" target="_blank" rel="noopener noreferrer">Open hdobox.sbs</a>
+          <a class="btn btn-ghost" href="#how">How it works</a>
+        </div>
+
+        <div class="features" id="features" aria-hidden="false" style="margin-top:20px">
+          <div class="feature">
+            <h4>Fast Streaming</h4>
+            <p>Optimized playback for low bandwidth — quick start and smooth streaming on mobile.</p>
+          </div>
+          <div class="feature">
+            <h4>Updated Daily</h4>
+            <p>New movies and episodes added regularly so you never miss trending titles.</p>
+          </div>
+          <div class="feature">
+            <h4>Secure & Lightweight</h4>
+            <p>No unnecessary clutter — clean UI and privacy-respecting behaviour.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="preview card">
+        <div class="img">
+          <div>
+            <h3>Featured: Top Picks</h3>
+            <div style="font-size:13px;color:rgba(255,255,255,0.8);margin-top:6px">Hand-picked movies & series</div>
+          </div>
+        </div>
+        <div class="meta">
+          <strong>Visit:</strong> <a href="https://hdobox.sbs/" target="_blank" style="color:var(--brand);text-decoration:none">hdobox.sbs</a><br>
+          <small style="color:var(--muted)">Tip: Use the Browse section to find curated lists and latest releases.</small>
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <section class="section card">
+        <div class="grid-2">
+          <div>
+            <h3 id="how">How hdobox Works</h3>
+            <p style="color:var(--muted)">hdobox curates content from multiple sources and presents a simple browsing experience — no complicated menus, just fast access to movies and shows. Perfect for casual streaming and quick discovery.</p>
+
+            <ul style="color:var(--muted);margin-top:10px">
+              <li>Browse trending collections and genres</li>
+              <li>Click a title to open streaming options</li>
+              <li>Works well on phones, tablets and desktops</li>
+            </ul>
+
+            <h4 style="margin-top:14px">Getting started</h4>
+            <ol style="color:var(--muted);margin-top:8px">
+              <li>Visit <a href="https://hdobox.sbs/" target="_blank" style="color:var(--brand)">hdobox.sbs</a></li>
+              <li>Use search or browse categories</li>
+              <li>Open any title and choose a stream</li>
+            </ol>
+          </div>
+
+          <div style="padding-left:12px">
+            <h4>Quick Facts</h4>
+            <p style="color:var(--muted)">Platform: <strong>hdobox</strong></p>
+            <p style="color:var(--muted)">Website: <a href="https://hdobox.sbs/" target="_blank" style="color:var(--brand)">hdobox.sbs</a></p>
+            <p style="color:var(--muted)">Mobile friendly: <strong>Yes</strong></p>
+            <a class="btn btn-primary" href="https://hdobox.sbs/" target="_blank" style="display:inline-block;margin-top:10px">Go to hdobox.sbs</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section card faq">
+        <h3>FAQ</h3>
+        <div class="q">
+          <strong>Q: What is hdobox?</strong>
+          <p style="color:var(--muted)">A: hdobox is a streaming hub that helps you find and watch movies and shows quickly. Visit the official site to explore.</p>
+        </div>
+        <div class="q">
+          <strong>Q: Is hdobox free?</strong>
+          <p style="color:var(--muted)">A: hdobox offers free browsing and discovery. Details about content access are on the website.</p>
+        </div>
+        <div class="q">
+          <strong>Q: How do I report an issue?</strong>
+          <p style="color:var(--muted)">A: For site issues, use the contact link on hdobox.sbs or open an issue via the GitHub profile.</p>
+        </div>
+      </section>
+
+      <div class="footer card" role="contentinfo">
+        © <span id="yr"></span> hdobox — Visit <a href="https://hdobox.sbs/" target="_blank" style="color:var(--brand)">hdobox.sbs</a>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Set copyright year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Simple smooth scroll for nav anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  </script>
+</body>
+</html>
